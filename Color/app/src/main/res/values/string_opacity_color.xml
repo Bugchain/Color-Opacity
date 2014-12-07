@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="string_color">
+        <item>#00009688</item>
+        <item>#0D009688</item>
+        <item>#1A009688</item>
+        <item>#26009688</item>
+        <item>#33009688</item>
+        <item>#40009688</item>
+        <item>#4D009688</item>
+        <item>#59009688</item>
+        <item>#66009688</item>
+        <item>#73009688</item>
+        <item>#80009688</item>
+        <item>#8C009688</item>
+        <item>#99009688</item>
+        <item>#A6009688</item>
+        <item>#B3009688</item>
+        <item>#BF009688</item>
+        <item>#CC009688</item>
+        <item>#D9009688</item>
+        <item>#E6009688</item>
+        <item>#F2009688</item>
+        <item>#FF009688</item>
+    </string-array>
+</resources>

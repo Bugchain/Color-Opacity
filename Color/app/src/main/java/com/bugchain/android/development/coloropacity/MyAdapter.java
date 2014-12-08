@@ -16,12 +16,14 @@ public class MyAdapter extends BaseAdapter {
 
     private String[] color;
     private String[] value;
+    private String[] hexValue;
     private Context context;
 
-    public MyAdapter(Context context,String[] value,String[] color){
+    public MyAdapter(Context context,String[] value,String[] color,String[] hexValue){
         this.context = context;
         this.color = color;
         this.value = value;
+        this.hexValue = hexValue;
     }
     @Override
     public int getCount() {
@@ -41,13 +43,27 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        convertView = LayoutInflater.from(context).inflate(R.layout.list_item,parent,false);
-        ImageView img = (ImageView)convertView.findViewById(R.id.image);
-        TextView textValue = (TextView)convertView.findViewById(R.id.textValues);
+        ViewHolder holder;
+        if(convertView == null){
+            holder = new ViewHolder();
+            convertView = LayoutInflater.from(context).inflate(R.layout.list_item,parent,false);
+            holder.image =  (ImageView)convertView.findViewById(R.id.image);
+            holder.text =  (TextView)convertView.findViewById(R.id.textValues);
+            holder.hex = (TextView)convertView.findViewById(R.id.textHex);
+            convertView.setTag(holder);
+        }else{
+            holder = (ViewHolder)convertView.getTag();
+        }
 
-        img.setBackgroundColor(Color.parseColor(color[position]));
-        textValue.setText(value[position]);
+        holder.image.setBackgroundColor(Color.parseColor(color[position]));
+        holder.text.setText(value[position]);
+       // holder.hex.setText(hexValue[position]);
 
         return convertView;
+    }
+
+    class ViewHolder{
+        ImageView image;
+        TextView text,hex;
     }
 }

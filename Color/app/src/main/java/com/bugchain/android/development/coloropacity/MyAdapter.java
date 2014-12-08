@@ -49,7 +49,7 @@ public class MyAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_item,parent,false);
             holder.image =  (ImageView)convertView.findViewById(R.id.image);
             holder.text =  (TextView)convertView.findViewById(R.id.textValues);
-            holder.hex = (TextView)convertView.findViewById(R.id.textHex);
+
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder)convertView.getTag();
@@ -57,13 +57,13 @@ public class MyAdapter extends BaseAdapter {
 
         holder.image.setBackgroundColor(Color.parseColor(color[position]));
         holder.text.setText(value[position]);
-       // holder.hex.setText(hexValue[position]);
+
 
         return convertView;
     }
 
     class ViewHolder{
         ImageView image;
-        TextView text,hex;
+        TextView text;
     }
 }
